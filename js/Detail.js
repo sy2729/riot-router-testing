@@ -4,8 +4,16 @@ riot.tag2('detail', '<h1>This is the Detail page</h1> <div class="nav"> <a type=
     var subRoute = route.create();
     this.subpage = "detail-1";
     subRoute('detail-page/*', function(subpage) {
+			console.log('Detail detail-page/*', subpage);
       that.subpage = subpage;
       that.update();
     })
+
+		this.on('mount', function() {
+			console.log('Detail.tag mounted');
+		})
+		this.on('update', function(){
+		  console.log('Detail.tag', this.subpage);
+		})
 
 });

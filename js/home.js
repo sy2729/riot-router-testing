@@ -7,6 +7,7 @@ riot.tag2('home', '<div class="nav"> <a type="button" href="#detail-page">Detail
     var Route = route.create();
 
     Route('*', function(page) {
+			console.log('Route *');
       that.page = page;
       that.update();
     })

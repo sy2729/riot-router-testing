@@ -19,9 +19,18 @@
     var subRoute = route.create();
     this.subpage = "detail-1";
     subRoute('detail-page/*', function(subpage) {
+			console.log('Detail detail-page/*', subpage); // Code for BUG SEARCH
       that.subpage = subpage;
       that.update();
     })
+
+		// Code for BUG SEARCH
+		this.on('mount', function() {
+			console.log('Detail.tag mounted');
+		})
+		this.on('update', function(){
+		  console.log('Detail.tag', this.subpage);
+		})
 
 
     // this.on('mount', function() {

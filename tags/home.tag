@@ -24,6 +24,7 @@
     var Route = route.create();
 
     Route('*', function(page) {
+			console.log('Route *');
       that.page = page;
       that.update();
     })
