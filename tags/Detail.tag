@@ -8,29 +8,28 @@
     <a type="button" href="#detail-page/detail-3">Detail-3</a>
   </div>
 
-  <detail-1 if={subpage === "detail-1"}><detail-1>
+  <detail-1 if={subpage === "detail-1"}></detail-1>
   <detail-2 if={subpage === "detail-2"}></detail-2>
-  <detail-3 if={subpage === "detail-3"}><detail-3>
+  <detail-3 if={subpage === "detail-3"}></detail-3>
 
 
 
   <script>
     var that = this;
     var subRoute = route.create();
-    this.subpage = "detail-1";
+    this.subpage = "detail-2";
     subRoute('detail-page/*', function(subpage) {
-			console.log('Detail detail-page/*', subpage); // Code for BUG SEARCH
       that.subpage = subpage;
       that.update();
     })
 
 		// Code for BUG SEARCH
-		this.on('mount', function() {
-			console.log('Detail.tag mounted');
-		})
-		this.on('update', function(){
-		  console.log('Detail.tag', this.subpage);
-		})
+		// this.on('mount', function() {
+		// 	console.log('Detail.tag mounted');
+		// })
+		// this.on('update', function(){
+		//   console.log(this.subpage + ": this is the subpage!");
+		// })
 
 
     // this.on('mount', function() {
